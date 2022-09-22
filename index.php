@@ -1,5 +1,7 @@
 <?php
 
+include "app/function.php";
+
 include "layouts/header.php";
 // include_once "layouts/header.php";
 
