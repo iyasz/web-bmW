@@ -7,7 +7,13 @@ if (isset($_POST['post_login'])) {
     $passCheck = $conn->query("SELECT * FROM siswa WHERE password = '$password'");
 
     if (mysqli_num_rows($userCheck) < 1) {
-        $alert = "";
+        $alert = "Username Anda Belum Terdaftar!";
+    } else {
+        if (mysqli_num_rows($passCheck) < 0) {
+            $alert = "Password Anda Salah!";
+        } else {
+            header('location : kanjut.php');
+        }
     }
 }
 
@@ -34,7 +40,7 @@ if (isset($_POST['post_login'])) {
                             </div>
                             <div class="mb-3 hp">
                                 <label for="pw">Password</label>
-                                <input type="text" name="password" id="pw" class="form-control" autocomplete="off">
+                                <input type="password" name="password" id="pw" class="form-control" autocomplete="off">
                                 <p></p>
                             </div>
                             <div class="footer text-center mt-5 mb-4">

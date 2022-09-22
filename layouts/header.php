@@ -10,6 +10,9 @@
 
     <!-- costumCSS -->
     <link rel="stylesheet" href="<?= base_url() ?>asset/css/custom.css">
+
+    <!-- izitoast -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
 </head>
 
 <body>
