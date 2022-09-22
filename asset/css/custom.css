@@ -1,0 +1,31 @@
+.bc-100{
+    background: #208780 !important;
+}
+.bc-200{
+    background: #f7fafc !important;
+    height: 100vh;
+}
+.hp{
+    height: 65px;
+}
+.card{
+    border-radius: 20px;
+}
+
+.pl {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -40px;
+    margin: 0px auto;
+    width: 74px;
+    height: 74px;
+    line-height: 74px;
+    background: #ffffff;
+    border-radius: 50%;
+    border: 2px solid #208780;
+}
+
+.pr {
+    top: 76px;
+}
