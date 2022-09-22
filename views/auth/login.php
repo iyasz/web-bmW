@@ -1,3 +1,20 @@
+<?php
+
+if (isset($_POST['post_login'])) {
+    $username = htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['password']);
+    $userCheck = $conn->query("SELECT * FROM siswa WHERE username = '$username'");
+    $passCheck = $conn->query("SELECT * FROM siswa WHERE password = '$password'");
+
+    if (mysqli_num_rows($userCheck) < 1) {
+        $alert = "";
+    }
+}
+
+
+?>
+
+
 <div class="bc-200">
     <div class="container position-relative  pr">
         <div class="row justify-content-center">
@@ -21,7 +38,7 @@
                                 <p></p>
                             </div>
                             <div class="footer text-center mt-5 mb-4">
-                                <button class="btn btn-primary">login</button>
+                                <button class="btn btn-primary" name="post_login">login</button>
                             </div>
                         </form>
                     </div>
