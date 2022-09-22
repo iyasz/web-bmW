@@ -6,13 +6,17 @@ if (isset($_POST['post_login'])) {
     $userCheck = $conn->query("SELECT * FROM siswa WHERE username = '$username'");
     $passCheck = $conn->query("SELECT * FROM siswa WHERE password = '$password'");
 
-    if (mysqli_num_rows($userCheck) < 1) {
-        $alert = "Username Anda Belum Terdaftar!";
+    if (empty($username) or empty($password)) {
+        $alert = "Masukan Username Dan Password Anda";
     } else {
-        if (mysqli_num_rows($passCheck) < 0) {
-            $alert = "Password Anda Salah!";
+        if (mysqli_num_rows($userCheck) < 1) {
+            $alert = "Username Anda Belum Terdaftar!";
         } else {
-            header('location : kanjut.php');
+            if (mysqli_num_rows($passCheck) < 0) {
+                $alert = "Password Anda Salah!";
+            } else {
+                header('location : kanjut.php');
+            }
         }
     }
 }
